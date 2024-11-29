@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Isolation Progress Tracker</title>
+  <style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin: 10px 0 5px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  #interaction-log {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #interaction-log li {
+    background-color: #e9ecef;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  #progress-bar-container {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 5px;
+  }
+  
+  #progress-bar {
+    width: 0;
+    height: 30px;
+    background-color: #28a745;
+    border-radius: 5px;
+  }
+  
+  #progress-percentage {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Social Interaction Progress Tracker</h1>
+    <form id="tracker-form">
+      <label for="interaction-type">Interaction Type:</label>
+      <input type="text" id="interaction-type" placeholder="E.g., call a friend, join a club" required>
+      
+      <label for="interaction-time">Time Spent (in minutes):</label>
+      <input type="number" id="interaction-time" required>
+      
+      <button type="submit">Log Interaction</button>
+    </form>
+    
+    <h2>Logged Interactions</h2>
+    <ul id="interaction-log"></ul>
+
+    <h2>Weekly Progress</h2>
+    <div id="progress-bar-container">
+      <div id="progress-bar"></div>
+    </div>
+    <p id="progress-percentage">0%</p>
+  </div>
+
+  <script>// JavaScript to handle form and progress tracking
+    document.getElementById('tracker-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+    
+      const interactionType = document.getElementById('interaction-type').value;
+      const interactionTime = parseInt(document.getElementById('interaction-time').value);
+      
+      // Add interaction to the log
+      const logItem = document.createElement('li');
+      logItem.textContent = `${interactionType}: ${interactionTime} minutes`;
+      document.getElementById('interaction-log').appendChild(logItem);
+      
+      // Update progress
+      updateProgress(interactionTime);
+    
+      // Clear form fields
+      document.getElementById('interaction-type').value = '';
+      document.getElementById('interaction-time').value = '';
+    });
+    
+    // Variables to store total interaction time and goal
+    let totalInteractionTime = 0;
+    const weeklyGoal = 300; // 300 minutes (e.g., 5 hours per week)
+    
+    function updateProgress(time) {
+      totalInteractionTime += time;
+      
+      const progressPercentage = Math.min((totalInteractionTime / weeklyGoal) * 100, 100);
+      
+      // Update progress bar width
+      document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
+      
+      // Update progress percentage text
+      document.getElementById('progress-percentage').textContent = `${Math.round(progressPercentage)}%`;
+    }
+    </script>
+</body>
+</html>

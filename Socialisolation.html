@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Isolation Prevention</title>
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+
+    
+    <link href="huihui.css" rel="stylesheet">
+</head>
+
+<body>
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <header>
+        <h1><b>BONDIFY</b></h1>
+    </header>
+
+    <nav>
+        <a href="Socialisolation.html">Home</a>
+        <a href="resources.html">How to improve</a>
+        <a href="Socialisolation.html">About Us</a>
+        <a href="https://manastha.com/">Contact for help</a>
+        <a href="Progresstracker.html">Progress Tracker</a>
+        <a href="mentalhealthassessment.html">Mental Health assessment</a>
+    </nav>
+    <button id="signup-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+
+
+<div id="id01" class="modal">
+<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+<form class="modal-content" id="signupForm" onsubmit="return handleSignup();">
+<div class="container">
+<h1>Sign Up!</h1>
+        
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+  
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+  
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+  
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+  
+        <label for="age"><b>Age</b></label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required>
+  
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+  
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  <script>
+    // Function to handle form submission and guide user based on age
+    function handleSignup() {
+      const age = document.getElementById('age').value;
+  
+      if (!age || isNaN(age)) {
+        alert('Please enter a valid age.');
+        return false;
+      }
+  
+      if (age >= 0 && age <= 12) {
+        window.location.href = "childrenbondify.html"; 
+      } else if (age >= 13 && age <= 18) {
+        window.location.href = "teenagerbondify.html"; 
+      } else if (age >= 19 && age <= 45) {
+        window.location.href = "adultbondify.html"; 
+      } else {
+        alert('Age not supported for this service.');
+        return false;
+      }
+   return false;
+    }
+  </script>
+  
+
+<script>
+var modal = document.getElementById('id01');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+        <div class="content-box" style="background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png'); 
+                                       background-color: #eaf2f8; 
+                                       padding: 40px; 
+                                       border-radius: 15px; 
+                                       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+            
+
+            <link href='https://fonts.googleapis.com/css?family=Playfair+Display|Lato' rel='stylesheet'>
+            
+            <h1>
+                Why is Social Isolation Prevention Important?
+            </h1>
+            
+            <p style="font-family: 'Lato', sans-serif; 
+                      font-size: 18px; 
+                      line-height: 1.6; 
+                      color: #34495e; 
+                      text-align: justify; 
+                      margin-bottom: 20px;">
+                Social isolation can lead to numerous negative effects on both mental and physical health.
+                 Individuals who feel isolated from society are at greater risk for depression, anxiety, 
+                 and even cognitive decline. Moreover, the lack of social connections is known to increase
+                  the likelihood of chronic illnesses like heart disease, high blood pressure, and weakened
+                   immune systems.
+            </p>
+            
+            <p style="font-family: 'Lato', sans-serif; 
+                      font-size: 18px; 
+                      line-height: 1.6; 
+                      color: #34495e; 
+                      text-align: justify;">
+                Preventing social isolation is crucial because it helps foster a sense of belonging, community 
+                support, and overall well-being. Through social engagement, people can improve their self-esteem,
+                 resilience, and mental health. Bondify is committed to helping individuals connect with others, 
+                 forming supportive networks that combat loneliness and encourage a more fulfilling life.
+            </p>
+        </div>
+        <div class="content-box" style="background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png'); 
+        background-color: #eaf2f8; 
+        padding: 40px; 
+        border-radius: 15px; 
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+        <h1>About us</h1>
+        <p style="font-family: 'Lato', sans-serif; 
+        font-size: 18px; 
+        line-height: 1.6; 
+        color: #34495e; 
+        text-align: justify;">Bondify is dedicated to preventing social isolation by providing 
+        age-specific resources for children, teenagers, and adults. Our platform offers valuable tips, 
+        a progress tracker, and a range of resources to help individuals stay connected and engaged, 
+        targeting a sense of well-benig.</p>
+      </div>
+
+  
+        <h2>Get in Touch with Us</h2>
+        <button id="greetButton" onclick="connectViaWhatsApp()">Connect through WhatsApp</button>
+        <button id="emailButton" onclick="connectViaEmail()">Connect via Email</button>
+    </div>
+
+    <script>
+        function connectViaWhatsApp() {
+            const userNumber = prompt("Enter your phone number (10 digits):");
+
+            if (userNumber && userNumber.length === 10 && !isNaN(userNumber)) {
+                alert("Thank you for connecting with us on WhatsApp!");
+            } else {
+                alert("Please enter a valid phone number.");
+            }
+        }
+
+        function connectViaEmail() {
+            const userEmail = prompt("Enter your email:");
+
+            if (userEmail && userEmail.includes("@") && userEmail.includes(".")) {
+                alert("Thank you for connecting!");
+            } else {
+                alert("Please enter valid email address.");
+            }
+        }
+
+        function createAccount() {
+            const password = document.getElementById('p1').value;
+            const confirmPassword = document.getElementById('p2').value;
+
+            if (password === confirmPassword) {
+                alert("Account created successfully!");
+            } else {
+                alert("Passwords do not match. Please try again.");
+            }
+        }
+    </script>
+</body>
+
+</html>

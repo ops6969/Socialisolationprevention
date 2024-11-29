@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bondify for Kids</title>
+    <link href='https://fonts.googleapis.com/css?family=Comic Sans MS' rel='stylesheet'>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+
+        body {
+            background-color: #fef9e6; /* Light cream for a soft, kid-friendly look */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #ffd700; /* Goldenrod for a bright, happy vibe */
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid #ffa500; /* Orange border for visual interest */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #ff4500; /* OrangeRed for excitement */
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #ffa07a; /* Light salmon for a friendly tone */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background-color: #ffefd5; /* Light pastel yellow for cheerfulness */
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            width: 85%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tips-section h2 {
+            font-size: 2rem;
+            color: #ff6347; /* Tomato color for fun */
+        }
+
+        .tips-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tip {
+            background-color: #ffe4e1; /* Light pink for a playful vibe */
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .tip:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .tip h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: #d2691e; /* Chocolate for warmth */
+        }
+
+        .tip-details {
+            display: none;
+            font-size: 1rem;
+            margin-top: 10px;
+            color: #555;
+            text-align: left;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ffa07a; /* Light salmon */
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><b>Bondify for Kids</b></h1>
+        <p>Helping kids connect and make new friends!</p>
+    </header>
+
+    <nav>
+        <a href="Socialisolation.html">Home</a>
+        <a href="resources.html">How to Improve</a>
+        <a href="Socialisolation.html">About Us</a>
+        <a href="https://manastha.com/">Contact for Help</a>
+        <a href="Progresstracker.html">Progress Tracker</a>
+        <a href="mentalhealthassessment.html">Mental Health Assessment</a>
+    </nav>
+
+    <div class="container">
+        <section class="tips-section">
+            <h2>Fun Tips for Kids to Make New Friends!</h2>
+            <p>Click on a tip to learn more about how you can make friends and have fun!</p>
+            <div class="tips-container">
+                <div class="tip" onclick="toggleTipDetails('tip1-details')">
+                    <h3>1. Join a Team or Club</h3>
+                    <p id="tip1-details" class="tip-details">
+                        Play a sport, join a music group, or be part of an art class. Doing fun things with others helps you make new friends!
+                    </p>
+                </div>
+                <div class="tip" onclick="toggleTipDetails('tip2-details')">
+                    <h3>2. Be Kind and Say Hi</h3>
+                    <p id="tip2-details" class="tip-details">
+                        A big smile and a friendly “Hi!” can make someone feel happy and want to talk to you.
+                    </p>
+                </div>
+                <div class="tip" onclick="toggleTipDetails('tip3-details')">
+                    <h3>3. Play Outside</h3>
+                    <p id="tip3-details" class="tip-details">
+                        Go to the park or playground and join in on games. Playing together is a great way to make friends.
+                    </p>
+                </div>
+                <div class="tip" onclick="toggleTipDetails('tip4-details')">
+                    <h3>4. Share Your Toys</h3>
+                    <p id="tip4-details" class="tip-details">
+                        Sharing toys or games with others shows you're friendly and makes it easy to play together.
+                    </p>
+                </div>
+                <div class="tip" onclick="toggleTipDetails('tip5-details')">
+                    <h3>5. Try Something New</h3>
+                    <p id="tip5-details" class="tip-details">
+                        Join a new activity, like learning to dance or cook! You’ll meet kids who like the same things as you.
+                    </p>
+                </div>
+                <div class="tip" onclick="toggleTipDetails('tip6-details')">
+                    <h3>6. Be a Good Listener</h3>
+                    <p id="tip6-details" class="tip-details">
+                        When your friends talk, listen carefully and ask questions. It shows you care about them!
+                    </p>
+                </div>
+                <div class="tip" onclick="toggleTipDetails('tip7-details')">
+                    <h3>7. Be Brave and Ask to Play</h3>
+                    <p id="tip7-details" class="tip-details">
+                        If you see kids playing, ask politely if you can join. Most of the time, they’ll say yes!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bondify. Helping kids bond and grow!</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle tip details
+        function toggleTipDetails(tipId) {
+            const tip = document.getElementById(tipId);
+            tip.style.display = tip.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+
+</html>

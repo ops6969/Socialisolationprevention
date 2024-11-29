@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Assessment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+    body 
+
+font-family: Arial, Helvetica, sans-serif;
+* {box-sizing: border-box;}
+
+        header {
+            background-color: #2c4f40;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1{
+    font-size:40px;
+    font-family: 'League Spartan';
+     }
+        h2 {
+            font-size: 1.8em;
+            color: #2c4f40;
+            border-bottom: 2px solid #2c4f40;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+         
+    font-size:30px;
+    font-family: 'League Spartan';
+     
+        }
+
+        label {
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question div {
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            background-color: #2c4f40;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #1f3d33;
+        }
+
+        .results-box {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            display: none; /* Hidden by default, displayed after form submission */
+        }
+
+        .results-box h3 {
+            color: #2c4f40;
+            font-size: 1.5em;
+        }
+
+        .results-box p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #2c4f40;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            margin-top: 40px;
+        }
+
+        #nature {
+font-family: Arial, sans-serif;
+padding: 100px;
+background-image: url('https://t4.ftcdn.net/jpg/05/47/97/81/360_F_547978128_vqEEUYBr1vcAwfRAqReZXTYtyawpgLcC.jpg');
+background-repeat: no-repeat;
+background-size: 1440px 500px;
+filter: blur(8px); 
+}
+
+
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Position the Sign Up button on the right */
+#signup-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  right: 0;
+  top: 0;
+  width: 35%; /* Adjust width to fit the right corner */
+  height: auto; /* Auto height based on content */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 0; /* Remove margin to align with top */
+  border: 1px solid #888;
+  width: 100%; /* Fit the modal container width */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+.font {
+font-size:20px;
+font-family:'Work sans';
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+div {
+    background-color: white;
+    }
+
+
+
+
+
+        nav {
+            padding: 5px 10;
+            text-align: center;
+            background-color: #2c4f40;
+            margin-bottom: 20px;
+            font-family: 'League Spartan';
+            font-size: larger;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: 50px auto;
+            text-align: center;
+            color: #000;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+        }
+
+        ul li label {
+            margin-left: 10px;
+        }
+
+        /* Table styling */
+        table {
+            width: 50%;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+
+        table th, td {
+            padding: 10px;
+            border: 2px solid #000;
+            text-align: left;
+        }
+        .progress {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 40%;
+            height: 20px;
+            background-color: #1e90ff;
+        }
+
+        .progress-text {
+            text-align: center;
+            margin-top: 5px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .b {
+            text-align: left;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Depression Assessment</h1>
+        <nav>
+            <a href="Socialisolation.html">Home</a>
+            <a href="resources.html">How to improve</a>
+            <a href="Socialisolation.html">About Us</a>
+            <a href="https://manastha.com/">Contact for help</a>
+            <a href="Progresstracker.html">Progress Tracker</a>
+            <a href="mentalhealthassessment.html">Mental Health assessment</a>
+    </header>
+
+    <div class="container">
+        <h2>Complete the Following Assessment</h2>
+        <p>Please answer the following questions based on how you've been feeling over the last two weeks:</p>
+
+        <form id="depressionForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <label>1. Little interest or pleasure in doing things?</label>
+                <div><input type="radio" name="q1" value="0" required> Not at all</div>
+                <div><input type="radio" name="q1" value="1"> Several days</div>
+                <div><input type="radio" name="q1" value="2"> More than half the days</div>
+                <div><input type="radio" name="q1" value="3"> Nearly every day</div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <label>2. Feeling down, depressed, or hopeless?</label>
+                <div><input type="radio" name="q2" value="0" required> Not at all</div>
+                <div><input type="radio" name="q2" value="1"> Several days</div>
+                <div><input type="radio" name="q2" value="2"> More than half the days</div>
+                <div><input type="radio" name="q2" value="3"> Nearly every day</div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <label>3. Trouble falling or staying asleep, or sleeping too much?</label>
+                <div><input type="radio" name="q3" value="0" required> Not at all</div>
+                <div><input type="radio" name="q3" value="1"> Several days</div>
+                <div><input type="radio" name="q3" value="2"> More than half the days</div>
+                <div><input type="radio" name="q3" value="3"> Nearly every day</div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <label>4. Feeling tired or having little energy?</label>
+                <div><input type="radio" name="q4" value="0" required> Not at all</div>
+                <div><input type="radio" name="q4" value="1"> Several days</div>
+                <div><input type="radio" name="q4" value="2"> More than half the days</div>
+                <div><input type="radio" name="q4" value="3"> Nearly every day</div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <label>5. Poor appetite or overeating?</label>
+                <div><input type="radio" name="q5" value="0" required> Not at all</div>
+                <div><input type="radio" name="q5" value="1"> Several days</div>
+                <div><input type="radio" name="q5" value="2"> More than half the days</div>
+                <div><input type="radio" name="q5" value="3"> Nearly every day</div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <label>6. Feeling bad about yourself — or that you are a failure or have let yourself or your family down?</label>
+                <div><input type="radio" name="q6" value="0" required> Not at all</div>
+                <div><input type="radio" name="q6" value="1"> Several days</div>
+                <div><input type="radio" name="q6" value="2"> More than half the days</div>
+                <div><input type="radio" name="q6" value="3"> Nearly every day</div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <label>7. Trouble concentrating on things, such as reading the newspaper or watching television?</label>
+                <div><input type="radio" name="q7" value="0" required> Not at all</div>
+                <div><input type="radio" name="q7" value="1"> Several days</div>
+                <div><input type="radio" name="q7" value="2"> More than half the days</div>
+                <div><input type="radio" name="q7" value="3"> Nearly every day</div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <label>8. Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual?</label>
+                <div><input type="radio" name="q8" value="0" required> Not at all</div>
+                <div><input type="radio" name="q8" value="1"> Several days</div>
+                <div><input type="radio" name="q8" value="2"> More than half the days</div>
+                <div><input type="radio" name="q8" value="3"> Nearly every day</div>
+            </div>
+
+            
+            
+        </form>
+
+        <div class="results-box" id="resultsBox">
+            <h3>Your Assessment Results</h3>
+            <p id="resultText"></p>
+        </div>
+        <button type="button" class="submit-btn" onclick="calculateScore()">Submit</button>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <h3>Your Assessment Results</h3>
+        <p id="resultText"></p>
+    </div>
+</div>
+
+
+
+<script>
+    function calculateScore() {
+        let score = 0;
+        const questions = document.querySelectorAll('.question input[type="radio"]:checked');
+
+        questions.forEach((question) => {
+            score += parseInt(question.value);
+        });
+
+        let resultText;
+        if (score <= 4) {
+            resultText = "Minimal depression";
+        } else if (score <= 9) {
+            resultText = "Mild depression";
+        } else if (score <= 14) {
+            resultText = "Moderate depression";
+        } else if (score <= 19) {
+            resultText = "Moderately severe depression";
+        } else {
+            resultText = "Severe depression";
+        }
+
+        document.getElementById('resultText').innerText = resultText;
+        document.getElementById('resultsBox').style.display = 'block';
+    }
+</script>
+</body></html>
+
